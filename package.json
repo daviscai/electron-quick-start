@@ -1,0 +1,60 @@
+{
+  "name": "AMS",
+  "productName": "",
+  "version": "1.0.0",
+  "description": "",
+  "author": "",
+  "license": "MIT",
+  "keywords": [
+    ""
+  ],
+  "private": true,
+  "main": "main.js",
+  "scripts": {
+    "start": "npm install && electron .",
+    "pack": "build --dir",
+    "dist": "build",
+    "release": "build"
+  },
+  "build": {
+    "appId": "org.ams",
+    "category": "act.ams",
+    "dmg": {
+      "contents": [
+        {
+          "x": 110,
+          "y": 150
+        },
+        {
+          "x": 240,
+          "y": 150,
+          "type": "link",
+          "path": "/Applications"
+        }
+      ]
+    },
+    "win": {
+      "remoteReleases": "",
+      "publish": [
+        "github",
+        "bintray"
+      ]
+    },
+    "linux": {
+      "publish": null,
+      "target": [
+        "deb",
+        "AppImage"
+      ]
+    }
+  },
+  "standard": {
+    "env": {
+      "mocha": true
+    }
+  },
+  "devDependencies": {
+    "electron": "1.4.3",
+    "electron-builder": "^7.13.0"
+  }
+}
